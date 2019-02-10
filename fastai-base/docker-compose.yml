@@ -1,0 +1,14 @@
+## Sample docker-compose file to run jellenberger/fastai-base
+
+version: '3'
+
+services:
+  jupyter:
+    image: jellenberger/fastai-base
+    shm_size: '2gb'  # see https://github.com/pytorch/pytorch/issues/2244; increase if necessary
+    volumes:
+      - ./notebooks:/home/appuser/notebooks # working / notebook directory
+      - ./data:/home/appuser/data # data directory
+    ports:
+      - 8888:8888
+    container_name: your_project_name
