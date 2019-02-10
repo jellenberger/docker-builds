@@ -5,3 +5,6 @@ This is a Docker build for an all-purpose Jupyter notebook environment. It's bas
 Jupyter runs as user `appuser`. Miniconda is installed in `appuser`'s home. `appuser` should be able to use the conda and pip installers without permissions issues.
 
 The included docker-compose file mounts ./notebooks/ as the working directory for notebooks and ./data as a data directory. If your user and group ids are 1000, Linux file permissions should work for locally-mounted volumes. I like to make ./data a symlink, which seems to work on a Linux host.
+
+Pull built image from Dockerhub at [jellenberger/jupyter-base](https://cloud.docker.com/repository/docker/jellenberger/jupyter-base).
+
