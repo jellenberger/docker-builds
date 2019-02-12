@@ -7,8 +7,8 @@ services:
     image: jellenberger/fastai-base
     shm_size: '2gb'  # see https://github.com/pytorch/pytorch/issues/2244; increase if necessary
     volumes:
-      - ./notebooks:/home/appuser/notebooks # working / notebook directory
-      - ./data:/home/appuser/data # data directory
+      - ${PWD}:/home/appuser/work # mount current local directory at container ~/work dir
+      - ${HOME}/data:/home/appuser/data # mount local ~/data repo at container ~/data dir
     ports:
       - 8888:8888
-    container_name: your_project_name
+    container_name: fastai_base

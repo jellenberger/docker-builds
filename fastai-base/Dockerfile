@@ -13,7 +13,7 @@ RUN conda update conda && \
     conda clean --all
 
 # Ensure we're in the correct working environment
-ENV WORKDIR=$HOME/notebooks
+ENV WORKDIR=$HOME/work
 WORKDIR $WORKDIR
 
 CMD ["jupyter", "lab"]
