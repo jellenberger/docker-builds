@@ -1,5 +1,4 @@
 ## Sample docker-compose file to run jellenberger/jupyter-base.
-## Change the project_name_here parameter to your project name
 
 version: '3'
 
@@ -7,8 +6,8 @@ services:
   jupyter:
     image: jellenberger/jupyter-base
     volumes:
-      - ./notebooks:/home/appuser/notebooks
-      - ./data:/home/appuser/data # mount data directory 
+      - ${PWD}:/home/appuser/work # mount current local directory at container ~/work dir
+      - ${HOME}/data:/home/appuser/data # mount local ~/data repo at container ~/data dir
     ports:
       - 8888:8888
-    container_name: project_name_here
+    container_name: jupyter_base

@@ -49,7 +49,7 @@ RUN conda update conda && \
     conda clean --all
 
 # Set up working dir
-ENV WORKDIR=$HOME/notebooks
+ENV WORKDIR=$HOME/work
 
 # Configure Jupyter
 EXPOSE 8888
