@@ -44,7 +44,9 @@ RUN conda update conda && \
         tqdm click \
         sqlalchemy sqlalchemy-utils \
         requests beautifulsoup4 scrapy lxml \
-        hdf5 pyarrow && \
+        hdf5 pyarrow \
+        dask \
+        csvkit && \
     conda install -y -c conda-forge requests-cache && \
     conda clean --all
 
