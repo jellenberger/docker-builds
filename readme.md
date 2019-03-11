@@ -8,5 +8,3 @@ General purpose Docker builds for various purposes. See the readme in each direc
 
 - jupyter-base: general-purpose Jupyter image
 
-- fastai-base: general-purpose Jupyter image, with [fastai](https://github.com/fastai/fastai)
-
