@@ -6,8 +6,8 @@ services:
   jupyter:
     image: jellenberger/jupyter-base
     volumes:
-      - ${PWD}:/home/appuser/work # mount current local directory at container ~/work dir
-      - ${HOME}/data:/home/appuser/data # mount local ~/data repo at container ~/data dir
+      - ./work:/home/appuser/work
+      - ./data:/home/appuser/data
     ports:
       - 8888:8888
-    container_name: jupyter_base
+    container_name: jupyter-base

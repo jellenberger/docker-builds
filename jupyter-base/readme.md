@@ -1,9 +1,9 @@
 ## jellenberger/jupyter-base
 
-This is a Docker build for an all-purpose Jupyter notebook environment. It's based on jellenberger/python-base image. It runs Jupyterlab. "Regular" Jupyter is also installed. Typical Conda data science packages are installed, plus a few extras.
+This is a simple Docker build for a Jupyter notebook environment. It's based on the jellenberger/python-base image. Jupyter and a handful of data science packages are installed with Pipenv.
 
-Jupyter runs as user `appuser`. Miniconda is installed in `appuser`'s home. `appuser` should be able to use the conda and pip installers without permissions issues.
+Jupyter runs as user `appuser` in a Pipenv environment based at the appuser's home directory. `appuser`'s user and group ids are 1000--if these match the host user's, then file permissions should work fine.
 
-The included docker-compose file shows the way I like to run the image on Linux. It mounts the current local directory as a working directory inside the container and mounts a local data repository as a data directory inside the container. If your user and group ids are 1000, Linux file permissions should work without hassle. Otherwise, you'll need to specify the correct ids in docker-compose.
+A template docker-compose file is included. It assumes the directory it's run from has a `./work/` directory for notebooks and a `./data/` directory (or symlink) pointing to data.
 
 A pre-built image can be docker pulled from [jellenberger/jupyter-base](https://cloud.docker.com/repository/docker/jellenberger/jupyter-base).
