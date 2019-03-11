@@ -15,6 +15,10 @@ RUN mkdir -p $HOME && \
 
 # Proceed as non-root user
 USER appuser
-WORKDIR $HOME
 
+# install pipenv
+RUN pip install --user --no-cache-dir pipenv
+ENV PATH=$PATH:/home/appuser/.local/bin
+
+WORKDIR $HOME
 CMD ["bash"]

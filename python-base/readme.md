@@ -1,6 +1,6 @@
 # jellenberger/python-base
 
-This is a Docker build for a simple Python 3 image. It is essentially the Python 3 slim image with a non-root user added.
+This is a Docker build for a simple Python 3 image. It is essentially the Python 3 slim image, with a non-root user and [Pipenv](https://pipenv.readthedocs.io/en/latest/) added.
 
 The user, `appuser`, has a home directory at `\home\appuser`. `appuser` has a user and primary group ids of 1000.
 
