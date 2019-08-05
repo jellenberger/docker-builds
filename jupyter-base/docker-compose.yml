@@ -6,8 +6,7 @@ services:
   jupyter:
     image: jellenberger/jupyter-base
     volumes:
-      - ./work:/home/appuser/work
+      - ./notebooks:/home/appuser/notebooks
       - ./data:/home/appuser/data
     ports:
       - 8888:8888
-    container_name: jupyter-base

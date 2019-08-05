@@ -3,17 +3,16 @@ FROM jellenberger/python-base
 
 USER appuser
 
-RUN export PIP_NO_CACHE_DIR=false && \
-    pipenv install numpy scipy matplotlib pandas jupyter notebook
+COPY requirements.txt .
 
-# Set up working dir and configure Jupyter
-RUN mkdir $HOME/work && \
-    mkdir $HOME/.jupyter && \
-    echo "c.NotebookApp.ip = '*'" > $HOME/.jupyter/jupyter_notebook_config.py && \
-    echo "c.NotebookApp.open_browser = False" >> $HOME/.jupyter/jupyter_notebook_config.py && \
-    echo "c.NotebookApp.allow_origin = '*'" >> $HOME/.jupyter/jupyter_notebook_config.py && \
-    echo "c.NotebookApp.allow_remote_access = False" >> $HOME/.jupyter/jupyter_notebook_config.py
+RUN pip install --no-cache-dir --user -r requirements.txt
+
+# set up working dir and configure Jupyter
+RUN mkdir $HOME/notebooks && \
+    mkdir $HOME/.jupyter
+
+COPY jupyter_notebook_config.py $HOME/.jupyter/.
 
 EXPOSE 8888
 
-CMD ["pipenv", "run", "jupyter", "notebook"]
+CMD ["jupyter", "notebook"]
