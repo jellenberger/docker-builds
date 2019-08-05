@@ -4,7 +4,7 @@ FROM python:3.7-slim-stretch
 RUN apt-get update && apt-get -y upgrade && \
     apt-get autoremove && apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
-    python -m pip install --no-cache-dir --upgrade pip
+    python -m pip install --user --no-cache-dir --upgrade pip
 
 # Create non-root user and user home
 ENV HOME=/home/appuser
@@ -17,7 +17,7 @@ RUN mkdir -p $HOME && \
 USER appuser
 
 # install pipenv
-RUN pip install --user --no-cache-dir pipenv
+RUN pip install --user --no-cache-dir --upgrade --no-warn-script-location pip
 ENV PATH=$PATH:/home/appuser/.local/bin
 
 WORKDIR $HOME
