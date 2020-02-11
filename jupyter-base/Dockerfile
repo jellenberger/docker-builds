@@ -1,7 +1,7 @@
-FROM jellenberger/python-base
+FROM jupyter/scipy-notebook
 
 
-USER appuser
+USER jovyan
 
 COPY requirements.txt .
 

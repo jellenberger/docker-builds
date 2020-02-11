@@ -1,9 +1,15 @@
 # jellenberger/python-base
 
-This is a Docker build for a simple Python 3 image: a Python 3 Debian slim image with a non-root user added.
+This is template Dockerfile to build a dev environment from a slim Python 3 image.
 
-The user, `appuser`, has a home directory at `\home\appuser`. `appuser` has user and primary group ids of 1000.
+It includes: 
 
-The image starts a bash shell instead of Python
+- wait-for-it utility script (See https://docs.docker.com/compose/startup-order/)
 
-On Dockerhub at [jellenberger/python-base](https://cloud.docker.com/repository/docker/jellenberger/python-base).
+- a non-root user to run code (`appuser`, UID & GID 1000) with home `/home/appuser`
+
+- Pipenv installed at system level (no need to activate an environment)
+
+- Pipenv dependencies (including dev) installed from the local Pipfile and Pipfile.lock
+
+- local code copied to `/home/appuser/work`
