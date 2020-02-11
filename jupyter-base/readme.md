@@ -1,11 +1,7 @@
 ## jellenberger/jupyter-base
 
-This is a Docker build for a basic Jupyter notebook environment. It's based on the jellenberger/python-base image.
+These are Docker build & compose templates for a Jupyter notebook environment. They blithely ignore any potential user permission issues by assuming the current user has UID 1000 and the relevant local directories have already been created.
 
-Jupyter runs as user `appuser` in a Pipenv environment based at the appuser's home directory. `appuser`'s user and group ids are 1000.
+`docker-compose.yml` simply runs a [jupyter/scipy-notebook](https://github.com/jupyter/docker-stacks/tree/master/scipy-notebook), mapping the current directory's `./work` and `./data` subdirectories to `/home/jovyan`.
 
-The image includes a ~/notebooks directory that is intended to be mounted to a host directory containing notebooks. ~/, not ~/notebooks, is the initial working directory, so that a user has the option of mounting other volumes to be accessed from Jupyter (e.g. a data volume).
-
-An example template docker-compose file is included.
-
-A pre-built image can be docker pulled from [jellenberger/jupyter-base](https://cloud.docker.com/repository/docker/jellenberger/jupyter-base).
+`docker-compose-custom.yml` works similarly, but builds and runs a [jupyter/scipy-notebook](https://github.com/jupyter/docker-stacks/tree/master/scipy-notebook)-based image (see `Dockerfile`) with additional libraries from `requirements.txt` installed. The additional libraries are installed at the user level with pip: simpler and faster than a conda install but could possibly cause breakage.

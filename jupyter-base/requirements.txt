@@ -1,8 +1,1 @@
-jupyter
-jupyterlab
-numpy
-scipy
-matplotlib
-pandas
-tqdm
-chardet
+feather-format

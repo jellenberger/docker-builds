@@ -4,7 +4,7 @@ version: '3'
 
 services:
   jupyter:
-    image: jupyter/scipy-notebook
+    build: .
     volumes:
       - ./work:/home/jovyan/work
       - ./data:/home/jovyan/data
