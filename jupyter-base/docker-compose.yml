@@ -11,8 +11,8 @@ services:
     ports:
       - 8888:8888
 
-      #   db:
-#     image: postgres:11-alpine
+#   db:
+#     image: postgres:12-alpine
 #     environment:
 #       - POSTGRES_DB=${POSTGRES_USER}
 #       - POSTGRES_USER=${POSTGRES_USER}
