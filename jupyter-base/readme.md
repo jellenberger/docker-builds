@@ -1,3 +1,3 @@
 ## jellenberger/jupyter-base
 
-This Dockerfile and requirements.txt can be modified to create a Jupyter environment based on [jupyter/scipy-notebook](https://hub.docker.com/r/jupyter/scipy-notebook).
+This is a template for a Jupyter environment based on [jupyter/scipy-notebook](https://hub.docker.com/r/jupyter/scipy-notebook). It install additional packages from `requirements.txt`.

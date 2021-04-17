@@ -1,4 +1,3 @@
 feather-format
 ipython-sql
-sqlalchemy-utils
-psycopg2-binary
+datasette

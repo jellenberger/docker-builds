@@ -1,15 +1,15 @@
 # jellenberger/python-base
 
-This is template Dockerfile to build a dev environment from a slim Python 3 image.
+This is template Dockerfile to build a Python environment from a slim Python 3 image.
 
 It includes: 
 
 - wait-for-it utility script (See https://docs.docker.com/compose/startup-order/)
 
-- a non-root user to run code (`appuser`, UID & GID 1000) with home `/home/appuser`
+- a non-root user: `appuser`, UID & GID 1000
 
-- Pipenv installed at system level (no need to activate an environment)
+- Pipenv installed at system level
 
-- Pipenv dependencies (including dev) installed from the local Pipfile and Pipfile.lock
+- Pipenv dependencies installed from local Pipfile and Pipfile.lock
 
-- local code copied to `/home/appuser/work`
+- local code copied to `~/code`

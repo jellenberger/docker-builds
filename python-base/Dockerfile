@@ -1,5 +1,5 @@
 # Base image
-FROM python:3.7-slim
+FROM python:3.8-slim
 
 # Env vars
 # NOTE: for pip cache env var, watch https://github.com/pypa/pip/issues/5735
